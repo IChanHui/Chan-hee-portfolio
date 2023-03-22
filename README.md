@@ -4,9 +4,10 @@ haskell backend작업
 Guiding-Cody-Bot과 ADIO 백엔드를 AWS Lambda에 haskell파일을 올려서 작업     
 haskell로 AWS에 있는 DynamoDb, S3, Amazon EventBridge, API Gateway를 작업    
 
-frontend 작업
+frontend 및 backend 작업
 ----
-ADIO에서 HTML, CSS로 작업
+ADIO에서 frontend는 HTML, CSS로 작업
+backend는 haskell로 AWS에 있는 DynamoDb, S3를 작업
 
 퍼블리싱 및 backend 작업
 ----
