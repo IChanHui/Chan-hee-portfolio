@@ -1,38 +1,47 @@
 
-haskell backend작업      
+## bunnyburrow22st : 마음케어 서비스를 운영하는 커뮤니티 & NFTs      
+>URL back :<https://github.com/IChanHui/Chan-hee-portfolio/tree/main/Guiding-Cody-Bot/haskell-lambda/test>      
+
+**haskell backend 작업**      
+커뮤니티에 필요한 디스코드 봇의 기능을 만드는 작업을 하였으며 Haskell로 Backend 작업을 진행하였습니다.      
+테스트 전용 AWS Lambda (with API Gateway)를 따로 만들어 haskell .zip을 업로드해서         
+API recose 또는 client(디스코드)를 이용하여 테스트 후        
+release 전용 Lambda에 테스트가 완료된 .zip을 업로드합니다.      
+
+release후에도 디스코드 서버 내에 한번 더 테스트를 할 수 있기에 2번째 테스트를 거친 후      
+기능에 아무 문제가 없다고 판단이 되면 기능을 커뮤니티에 release 합니다.      
+
+client(디스코드)와 Lambda는 Restfull API로 연결했으며      
+AWS 내에 Lambda와 Event Bridge는 HTTP로 연결했습니다.     
+  
+DynamDB는 Haskell 내에 라이브러리로 연결하여 사용했으며       
+S3는 서비스 내에서 생성해주는 URL을 Haskell 내에 하드코딩하여 사용했습니다.     
+DynamoDB에 S3 URL을 (사용해? 저장해? 연결해?) 놓고 서비스에 활용하기도 했습니다.     
+
+**하드코딩 한 이유** : S3에 파일을 업로드하고 가져올 수 있는 Haskell 라이브러리가 있습니다. 하지만 서비스에 필요했던 기능은 이미지를 보여주는 것이었습니다. 디스코드 다큐먼트를 참고하면 image에 URL을 넣어 클라이언트로 이미지 사진을 보여줍니다. 그리고 해당 라이브러리는 파일을 업로드하거나 가져오는 방식이 URL로 이루어져 있기도 했기 때문에 라이브러리의 필요성을 느끼지 못해 하드코딩으로 개발을 했습니다.        
+
 ----
-Guiding-Cody-Bot과 ADIO 백엔드를 AWS Lambda에 haskell파일을 올려서 작업     
-haskell로 AWS에 있는 DynamoDb, S3, Amazon EventBridge, API Gateway를 작업    
-
-frontend 및 backend 작업
-----
-ADIO에서 frontend는 HTML, CSS로 작업
-backend는 haskell로 AWS에 있는 DynamoDb, S3를 작업
-
-퍼블리싱 및 backend 작업
-----
-페이지 기능 중 DB작업이 필요한 부분을 작업
-AWS EC2와 MySQL로 프로젝트 운영
 
 
 
-## Guiding-Cody-Bot : 마음케어 서비스를 운영하는 커뮤니티
->디스코드에서 사용자들이 커뮤니티를 잘 이용할 수 있게 봇 서비스를 제공   
->URL back :<https://github.com/IChanHui/Chan-hee-portfolio/tree/main/Guiding-Cody-Bot/haskell-lambda/test>       
 
-1. 스케줄에 맞게 인사, 안내 메세지, 디스코드 이용 팁, 음식 메뉴 골라주는 메세지 보내는 기능         
-2. 사용자가 사용한 커맨드(명령)에 맞게 사진이나 메세지를 보내는 기능      
-3. 간단한 랜덤 주사위 게임 기능         
-4. 케어 서비스를 위한 출석기능과 출석 관리 기능 제공      
 
-## ADIO : 블록체인을 활용한 메타버스 AD 플랫폼
->prototype website의 frontend 와 backend 작업         
+## ADIO : 메타버스에 블록체인을 활용한 광고(AD)를 달아주고 유저가 광고를 시청하면 토큰을 얻을 수 있는 서비스       
 >URL front : <https://github.com/IChanHui/Chan-hee-portfolio/tree/main/ADIO/front-end/images>      
 >URL back : <https://github.com/IChanHui/Chan-hee-portfolio/tree/main/ADIO/back-end/haskell-lambda/test>
 
-1. front는 HTML과 CSS로 작업
-2. 블록체인 코드를 퍼블리싱
-3. backend는 haskell로 AWS에 있는 DynamoDb, S3를 작업
+**frontend 및 backend 작업**
+서비스를 보여주기 위한 시뮬레이션 데모을 웹으로 제작하였으며      
+BNB chain을 적용하여 Javascript, HTML, CSS를 사용해 페이지에  제작하고 vercel에 gitHub를 연결하여 웹 배포를 진행했습니다.      
+API는 AWS Lambda (with API Gateway)를 Restful로 연결했으며  Haskell .zip을 업로드하여 사용했습니다.      
+front에 사용될 리소스를 local로 저장하는 것 대신 S3(URL)을 이용하여 front 작업을 했으며       
+서비스의 Demo 테스트를 위해 DynamoDB를 연결하여 사용했습니다.      
+
+
+----
+     
+
+
 
 
 
