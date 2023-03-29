@@ -1,0 +1,102 @@
+--------------------------------------------------BbsDAO.java--- ------------------------------------------
+//추가
+public void deleteBbs() {
+      String SQL = "delete from t_question where date(date_q) < date(subdate(now(), interval 7 DAY))";
+      try {
+         PreparedStatement pstmt = conn.prepareStatement(SQL);
+         pstmt.executeUpdate();
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
+---------------------------------------------UserDAO.java-----------------------------------------------------------
+//추가
+public int report_q(String id) {
+      String SQL = "select report_q from t_member where id=?";
+      try {
+         PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, id);
+            rs=pstmt.executeQuery();
+            if (rs.next()) {
+               return rs.getInt(1);
+            }
+      } catch(Exception e) {
+         e.printStackTrace();
+      }
+      return -1;
+   }
+
+public int report_a(String id) {
+      String SQL = "select report_a from t_member where id=?";
+      try {
+         PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, id);
+            rs=pstmt.executeQuery();
+            if (rs.next()) {
+               return rs.getInt(1);
+            }
+      } catch(Exception e) {
+         e.printStackTrace();
+      }
+      return -1;
+   }
+public void updateReport_q(String id) {
+      String SQL ="update t_member set report_q=0 where id=?";
+      try {
+         PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+      }catch(Exception e) {
+            e.printStackTrace();
+         }
+   }
+   
+   public void updateReport_a(String id) {
+      String SQL ="update t_member set report_a=0 where id=?";
+      try {
+         PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, id);
+            pstmt.executeUpdate();
+      }catch(Exception e) {
+            e.printStackTrace();
+         }
+   }
+
+
+---------------------------------------------main.jsp-----------------------------------------------------------
+@추가.  <% %> 안에(34행)
+bbsDAO.deleteBbs();
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------ReportDAO.java--- --------------------------------------
+//추가
+public void deleteReport() {
+         String SQL = "delete from t_report where num_q = (select num_q from t_question where date(date_q) < date(subdate(now(), interval 7 DAY)))";
+         try {
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.executeUpdate();
+         } catch (Exception e) {
+            e.printStackTrace();
+         }
+      }
+
+------------------------main.jsp----------------------------------
+//페이지 import부분
+<%@ page import="t_report.ReportDAO" %>
+//bbsDAO.deleteBbs() 아래 행에 (34행)
+ReportDAO reportDAO = new ReportDAO();
+      reportDAO.deleteReport();
