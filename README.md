@@ -1,3 +1,6 @@
+## Chanhee-Lee Portfolio Google Slides     
+URL : <https://docs.google.com/presentation/d/15TdmoTVXCpN_JbZ4lvZ4Ide0qCHyDeONcq8cqH_6qWA/edit?usp=sharing>       
+
 
 ## bunnyburrow22st : 마음케어 서비스를 운영하는 커뮤니티 & NFTs      
 >URL back :<https://github.com/IChanHui/Chan-hee-portfolio/tree/main/Guiding-Cody-Bot/haskell-lambda/test>      
