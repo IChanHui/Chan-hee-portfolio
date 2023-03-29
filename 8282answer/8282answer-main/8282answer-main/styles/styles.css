@@ -1,0 +1,29 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+.intro_bg{
+    background-image:url("image/");
+    width: 100%;
+    height: 300px;
+}
+
+.header{
+    background-color: lightblue;
+    height: 100px;
+    width:1200px;
+    margin: auto;
+
+}
+
+.nav{
+    background-color: lightcoral;
+    color: white;
+    width:200px;
+    height: 300px;
+    float: right;
+}
