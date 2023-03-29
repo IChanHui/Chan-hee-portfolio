@@ -43,6 +43,8 @@ front에 사용될 리소스를 local로 저장하는 것 대신 S3(URL)을 이�
 ----
      
 ## 8282answer (4인 팀 프로젝트, 조장) : 익명으로 글을 올려 질문을 하거나 답변을 하는 커뮤니티             
+> URL : <https://github.com/IChanHui/Chan-hee-portfolio/tree/main/8282answer>.         
+
 
 **프로젝트 총괄 및 backend 작업**              
 프로젝트의 WBS, ERD Javascript로 백엔드 작업을 하였으며       
