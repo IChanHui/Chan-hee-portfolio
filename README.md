@@ -19,7 +19,7 @@ AWS 내에 Lambda와 Event Bridge는 HTTP로 연결했습니다.
   
 DynamDB는 Haskell 내에 라이브러리로 연결하여 사용했으며       
 S3는 서비스 내에서 생성해주는 URL을 Haskell 내에 하드코딩하여 사용했습니다.     
-DynamoDB에 S3 URL을 (사용해? 저장해? 연결해?) 놓고 서비스에 활용하기도 했습니다.     
+DynamoDB에 S3 URL을 저장하여 서비스에 활용하기도 했습니다.     
       
 
 ----
